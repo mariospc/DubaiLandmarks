@@ -1,0 +1,17 @@
+<link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div id="card" class="card" style="border: 5px solid cadetblue;margin-right: 5%;margin-left: 5%;background-color: teal;color: white;">
+  <div style="height: 250px;width: 250px;display: inherit;margin: auto;max-width: 100%;">
+    <img src={{imgUrl}} alt={{attractionItem.title}} style="margin: 0;width: inherit;">
+  </div>
+  <div class="card-block px-2">
+      <h4 class="card-title" id="imageTitle" >
+        <a (click)="onClickDetailsButton(attractionItem)">{{attractionItem.title}}</a></h4>
+      <p class="card-text" style="text-align: justify;">{{attractionItem.short_info}}</p>
+      <!-- <button type="button" class="btn btn-info" (click)="onClickDetailsButton(attractionItem)" style="margin-bottom: 5%;">More Details</button> -->
+      <button class="btn btn-primary" style="position: absolute;right: -25px;top: 1px;" *ngIf="userService.isAdmin()" (click)="onClicUpdateButton(attractionItem)">
+        <i class="fa fa-edit"></i>Edit</button>
+  </div>
+</div>
+<br>
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown" style="width: fit-content;margin: auto;" *ngIf = "logInDisplay">
+  <div id="formContent">
+    <form #loginForm="ngForm">
+      <div>
+        <input required #username="ngModel" type="text" id="username" class="fadeIn second" name="username" placeholder="username" ngModel>
+        <input required #password="ngModel" type="password" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>     
+        <input type="button" class="fadeIn fourth" value="Log In"  (click)="submitLogIn(loginForm.value)" [disabled]="password.valid && username.valid?false:true">
+        <span *ngIf="password.invalid || username.invalid">Required Fields</span>
+      </div>
+      <span *ngIf="incorrectData">Username or Password are incorrect. Please try again!</span>
+    </form>
+    <div id="formFooter" style="text-align: center;">
+      <!-- <a class="underlineHover" href="#">Forgot Password?</a> -->
+      <!-- <br> -->
+      <a class="underlineHover" (click)="signUp()" id="signUp">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<div style="width: fit-content;margin: auto;"> 
+  <app-signup [signUpDisplay]="viewSignUp" (logIn)="submitLogIn($event)"></app-signup>
+</div>
+<ngx-spinner></ngx-spinner>

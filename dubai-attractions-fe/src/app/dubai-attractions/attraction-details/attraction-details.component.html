@@ -1,0 +1,51 @@
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqj6WfTUnGwxn52QlYkTiuFfXZiyoFK9Y&callback=initMap" type="text/javascript"></script>
+<link media="all" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card" style="text-align: center;width: 80%;border: 5px solid cadetblue;margin-left: auto; margin-right: auto; background-color: teal;color: white;margin-top: 52px;">
+    <img class="card-img-top" src={{srcImage}} alt="Card image cap" style="max-height: 600px;display: flex;">
+      <div class="card-body title">
+        <h1 class="card-title">{{title}}</h1>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span class="badge badge-pill badge-primary">Short Info
+            <i class="fa fa-info-circle" style="font-size: 35px;"></i>
+          </span>
+          <div>
+            {{short_info}}
+          </div>
+        </li>
+        <li class="list-group-item">
+          <span class="badge badge-pill badge-primary">Description
+            <i class="fa fa-file-text" style="font-size: 35px;"></i>
+          </span>
+          <div>
+            {{description}}
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div>
+            <span class="badge badge-pill badge-primary">
+              Location
+              <i class="fa fa-map-marker" style="font-size: 35px;"></i>
+            </span>
+            <agm-map [latitude]="lat" [longitude]="lng" style="width: auto; height: 500px;" [zoom]="15" [mapTypeId]="mapTypeId">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+          </div>
+        </li>
+        <li class="list-group-item" style="text-align: center;">
+          <a class="badge badge-pill badge-primary" href="http://{{url}}" style="margin-right: 20px;"  target="_blank">Official Website
+            <i class="fa fa-link" style="font-size: 35px;"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="card-body">
+        Share With: 
+        <share-button button="facebook" text="Share" [showText]="true"></share-button>
+        <share-button button="twitter" text="Tweet" [showText]="true"></share-button>
+        <share-button button="pinterest" text="pin" [showText]="true"></share-button>
+        <br>
+      </div>
+  </div>
+  <ngx-spinner></ngx-spinner>
+

@@ -1,0 +1,15 @@
+<div class="wrapper fadeInDown" style="width: fit-content;margin: auto;" *ngIf="signUpDisplay">
+    <div id="formContent">
+      <form #signUpForm="ngForm">
+        <div>
+          <input required #usernameSignUp="ngModel" type="text" id="usernameSignUp" class="fadeIn second" name="username" placeholder="username" ngModel>
+          <input required #passwordSignUp="ngModel" type="password" id="passwordSignUp" class="fadeIn third" name="password" placeholder="password" ngModel>     
+          <input required #emailSignUp="ngModel" type="text" id="emailSignUp" class="fadeIn fourth" name="email" placeholder="email" ngModel>     
+          <input type="button" class="fadeIn fourth" value="Create User"  (click)="createUser(signUpForm.value)" [disabled]="passwordSignUp.valid && usernameSignUp.valid && emailSignUp.valid?false:true">
+          <span *ngIf="passwordSignUp.invalid || usernameSignUp.invalid || emailSignUp.invalid">Required Fields</span>
+        </div>
+        <span *ngIf="incorrectData">{{errorMessage}}</span>
+      </form>
+    </div>
+  </div>
+  <ngx-spinner></ngx-spinner>

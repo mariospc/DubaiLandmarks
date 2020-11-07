@@ -1,0 +1,9 @@
+ngb-carousel img {
+  width: 100%;
+  max-height: 500px;
+  background-size: contain;
+}
+
+.container {
+  display: block;
+}

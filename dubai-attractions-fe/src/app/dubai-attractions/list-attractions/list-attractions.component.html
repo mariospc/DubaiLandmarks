@@ -1,0 +1,34 @@
+<ngx-spinner>Loading...</ngx-spinner>
+<div style="width: 100%;margin-top: 52px;">
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="wrapper">
+        <img src="https://cdn.britannica.com/15/189715-050-4310222B/Dubai-United-Arab-Emirates-Burj-Khalifa-top.jpg" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Burj Khalifa</h3>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="wrapper">
+        <img src="https://cdn.cnn.com/cnnnext/dam/assets/200924183413-dubai-9-1.jpg" alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Dubai View</h3>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="wrapper">
+        <img src="https://cdn.britannica.com/69/156369-050-75E7FD08/skyline-Dubai-United-Arab-Emirates.jpg"  alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Dubai at Night</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+<br>
+
+<div class="container" *ngFor = 'let attraction of attractionList'>
+    <app-attraction [attractionItem]='attraction'></app-attraction>
+</div>
